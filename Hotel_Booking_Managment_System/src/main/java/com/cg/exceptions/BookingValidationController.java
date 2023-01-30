@@ -1,4 +1,4 @@
-package com.cg.controller;
+package com.cg.exceptions;
 
 import java.util.HashMap;
 import java.util.Map;
