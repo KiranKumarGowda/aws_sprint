@@ -9,10 +9,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
+@Table(name="Bookingdetails")
 public class BookingDetails {
 	
 	@Id
@@ -28,6 +30,7 @@ public class BookingDetails {
 	
 	@Min(value=1)
 	private int no_of_adults;
+	
 	
 	private int no_of_children;
 	
@@ -47,13 +50,13 @@ public class BookingDetails {
 	
 	//in hotel pojo add @onetone (mapped by hotel and create book.d object)
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="paymentId_fk")
 	private List<Payments>payments;
 	
 	//in payment pojo add manytoone 
 	
-	@OneToMany(mappedBy="bookingdetails",cascade = CascadeType.ALL)
+	@OneToMany
 	private List<RoomDetails> roomdetails;
 	//in roomdetil pojo add many to one join column name as boolingdetails_fk
 	

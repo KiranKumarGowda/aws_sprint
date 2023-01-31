@@ -17,7 +17,7 @@ public class AdminController {
 	private AdminService adminService;
 	
 	@PostMapping("/signin")
-	public String signIn(@RequestBody @Valid Admin admin) {
+	public String signIn(@Valid @RequestBody  Admin admin) {
 		return adminService.signIn(admin);
 	}
 	@GetMapping("/signout")

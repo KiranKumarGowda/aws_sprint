@@ -2,11 +2,12 @@ package com.cg.service;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cg.entity.User;
-import com.cg.exception.UserNotFoundException;
+import com.cg.exceptions.UserNotFoundException;
 import com.cg.repository.IUserRepository;
 
 @Service
