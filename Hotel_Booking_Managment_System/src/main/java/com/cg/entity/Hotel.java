@@ -61,27 +61,27 @@ public class Hotel {
 		this.bookingdetails = bookingdetails;
 	}
 
-	@OneToOne(mappedBy = "hotels"/* , cascade = CascadeType.ALL */)
+	@OneToOne(mappedBy = "hotels", cascade = CascadeType.ALL )
 	private BookingDetails bookingdetails;
 	
 	
-	  @OneToMany(mappedBy ="hotel",cascade=CascadeType.ALL)
-		private List<RoomDetails>roomdetails;
-	  
+	/*
+	 * @OneToMany(mappedBy ="hotel",cascade=CascadeType.ALL) private
+	 * List<RoomDetails>roomdetails;
+	 */
 	 
-	  public List<RoomDetails> getRoomdetails() {
-		  return roomdetails; }
-	  
-	  public void setRoomdetails(List<RoomDetails> roomdetails) {
-		  this.roomdetails = roomdetails; }
-	  
-	  public Hotel(List<RoomDetails> roomdetails) {
-		  super(); 
-		  this.roomdetails =  roomdetails; }
-	 
-
+	/*
+	 * public List<RoomDetails> getRoomdetails() { return roomdetails; }
+	 * 
+	 * public void setRoomdetails(List<RoomDetails> roomdetails) { this.roomdetails
+	 * = roomdetails; }
+	 * 
+	 * public Hotel(List<RoomDetails> roomdetails) { super(); this.roomdetails =
+	 * roomdetails; }
+	 * 
+	 */
 	public Hotel() {
-	};
+	}
 
 	public Hotel(int hotel_id, String city, String hotel_name, String address, String description,
 			double avg_rate_per_day, String email, String phone1, String phone2, String website) {

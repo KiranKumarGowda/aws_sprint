@@ -1,6 +1,5 @@
 package com.cg.entity;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,11 +21,9 @@ public class RoomDetails {
 //	private Boolean isavailable;
 	
 	
-	/*
-	 * @ManyToOne
-	 * 
-	 * @JoinColumn(name="BookingDetails_fk") private BookingDetails bookingdetails;
-	 */
+	@ManyToOne
+	@JoinColumn(name = "BookingDetails_id")
+	private BookingDetails bookingdetails;
 	
     public  RoomDetails(){}
 

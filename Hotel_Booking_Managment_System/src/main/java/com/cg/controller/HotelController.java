@@ -30,11 +30,11 @@ public class HotelController {
 		return hotelService.updateHotel(hotel);
 	}
 	
-	@GetMapping("/showAll")
-	public List<Hotel>showAllHotels(){
-	return hotelService.showAllHotels();
+	@GetMapping("/showAllHotels")
+	public List<Hotel> showAllHotels() {
+		return hotelService.showAllHotels();
 	}
-	
+
 	@GetMapping("/showById/{id}")
 	public Hotel getHotel(@PathVariable("id") int hotel_id) {
 		return hotelService.showHotel(hotel_id);

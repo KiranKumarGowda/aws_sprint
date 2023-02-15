@@ -44,7 +44,7 @@ public class IBookingDetailsService {
 	}
 	
 	public String removeBookingDetailsById(int booking_id) {
-		// TODO Auto-generated method stub
+
 		if(ibookingdetailsrepository.existsById(booking_id)) {
 			ibookingdetailsrepository.deleteById(booking_id);
 		return "Bookingdetails are removed successfully";
