@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -20,6 +21,10 @@ public class Payments
 	@OneToOne
 	@JoinColumn(name="transactions")
 	private Transactions transactions;
+	
+	@ManyToOne
+	@JoinColumn(name ="booking_details_id")
+	private BookingDetails bookingdetails;
 	
 	
 	

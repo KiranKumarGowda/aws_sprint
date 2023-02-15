@@ -13,8 +13,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
 @Entity
-@Table(name ="users")
-
+@Table(name = "users")
 
 public class User {
 	@Id
@@ -30,45 +29,43 @@ public class User {
 	@NotBlank(message = "New password is mandatory")
 	@Column(name = "password")
 	private String password;
-	@Column(name = "role") 
+	@Column(name = "role")
 	private String role;
 	@Column(name = "mobile")
-	@Pattern(regexp = "^\\d{10}$",message= "invalid mobile number entered")
+	@Pattern(regexp = "^\\d{10}$", message = "invalid mobile number entered")
 	private String mobile;
 	@Column(name = "address")
 	private String address;
-	 
-		
-		  //@OneToOne(mappedBy="users",cascade=CascadeType.ALL) 
-	      //public BookingDetails bookingdetails;
-		  
-		  //public User(BookingDetails bookingdetails) { 
-	      //super();
-		  //this.bookingdetails = bookingdetails; //}
-		  
-		  
-		  //public BookingDetails getBookingdetails() { 
-	     //return bookingdetails; //}
-		  
-		  
-		  //public void setBookingdetails(BookingDetails bookingdetails) {
-		  //this.bookingdetails = bookingdetails; //}
-		  
-		 
+
+	@OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
+	public BookingDetails bookingdetails;
+
+	public User(BookingDetails bookingdetails) {
+		super();
+		this.bookingdetails = bookingdetails;
+	}
+
+	public BookingDetails getBookingdetails() {
+		return bookingdetails;
+	}
+
+	public void setBookingdetails(BookingDetails bookingdetails) {
+		this.bookingdetails = bookingdetails;
+	}
+
 	public User() {
 	}
 
 	public User(int user_id, String user_name, String user_email, String password, String role, String mobile,
-			String address)
-	{
+			String address) {
 
 		this.user_id = user_id;
-		this.user_name =user_name;
-		this.user_email =user_email;
-		this.password =password;
-		this.role =role;
-		this.mobile=mobile;
-		this.address=address;
+		this.user_name = user_name;
+		this.user_email = user_email;
+		this.password = password;
+		this.role = role;
+		this.mobile = mobile;
+		this.address = address;
 	}
 
 	public int getUser_id() {

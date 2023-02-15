@@ -17,7 +17,7 @@ public class IRoomDetailsService {
 
 	public String addRoomDetails(RoomDetails roomDetails) {
 		iroomdetailsRepository.saveAndFlush(roomDetails);
-	  	return "Hotel Added Successfully";
+	  	return "Room Added Successfully";
 	 }
 
 	public RoomDetails updateRoomDetails(RoomDetails roomDetails) {
@@ -39,7 +39,7 @@ public class IRoomDetailsService {
 			
 			
 		}
-		//return "Hotel Updated Successfully";
+		
 	 }
 
 	public List<RoomDetails> showAllRoomdetails() {
@@ -53,6 +53,6 @@ public class IRoomDetailsService {
 	public String removeRoomDetailsById(int room_id) {
 		if(iroomdetailsRepository.existsById(room_id))
 		 {iroomdetailsRepository.deleteById(room_id);
-		return "Bookingdetails are removed successfully";}
-		else {throw new Room_IDNotFoundException("Booking details are not found with Booking_Id:"+room_id);}}
+		return "Roomdetails are removed successfully";}
+		else {throw new Room_IDNotFoundException("Roomdetails are not found with room_Id:"+room_id);}}
 }
