@@ -22,10 +22,12 @@ public class Payments
 	@JoinColumn(name="transactions")
 	private Transactions transactions;
 	
-	@ManyToOne
-	@JoinColumn(name ="booking_details_id")
-	private BookingDetails bookingdetails;
-	
+	/*
+	 * @ManyToOne
+	 * 
+	 * @JoinColumn(name ="booking_details_id") private BookingDetails
+	 * bookingdetails;
+	 */
 	
 	
 	public Payments(){}
