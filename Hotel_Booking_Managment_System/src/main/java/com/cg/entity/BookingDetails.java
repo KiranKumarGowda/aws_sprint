@@ -50,14 +50,15 @@ public class BookingDetails {
 
 	// in hotel pojo add @onetone (mapped by hotel and create book.d object)
 
-	@OneToMany(mappedBy = "bookingdetails", cascade = CascadeType.ALL)
+	//@OneToMany(mappedBy = "bookingdetails", cascade = CascadeType.ALL)
 	// @JoinColumn(name = "paymentId_fk")
-	private List<Payments> payments;
+//	private List<Payments> payments;
 
 	// in payment pojo add manytoone
-
-	@OneToMany(mappedBy="bookingdetails",cascade=CascadeType.ALL)
-	private List<RoomDetails> roomdetails;
+	/*
+	 * @OneToMany(mappedBy="bookingdetails",cascade=CascadeType.ALL) private
+	 * List<RoomDetails> roomdetails;
+	 */
 	// in roomdetil pojo add many to one join column name as boolingdetails_fk
 
 	public BookingDetails() {
@@ -75,8 +76,8 @@ public class BookingDetails {
 		this.amount = amount;
 		this.users = users;
 		this.hotels = hotels;
-		this.payments = payments;
-		this.roomdetails = roomdetails;
+	//	this.payments = payments;
+		//this.roomdetails = roomdetails;
 	}
 
 	public int getBooking_id() {
@@ -143,21 +144,19 @@ public class BookingDetails {
 		this.hotels = hotels;
 	}
 
-	public List<Payments> getPayments() {
-		return payments;
-	}
+	/*
+	 * public List<Payments> getPayments() { return payments; }
+	 * 
+	 * public void setPayments(List<Payments> payments) { this.payments = payments;
+	 * }
+	 */
 
-	public void setPayments(List<Payments> payments) {
-		this.payments = payments;
-	}
-
-	public List<RoomDetails> getRoomdetails() {
-		return roomdetails;
-	}
-
-	public void setRoomdetails(List<RoomDetails> roomdetails) {
-		this.roomdetails = roomdetails;
-	}
+	/*
+	 * public List<RoomDetails> getRoomdetails() { return roomdetails; }
+	 * 
+	 * public void setRoomdetails(List<RoomDetails> roomdetails) { this.roomdetails
+	 * = roomdetails; }
+	 */
 
 	@Override
 	public String toString() {

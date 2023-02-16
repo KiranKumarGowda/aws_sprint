@@ -52,9 +52,12 @@ public class IHotelService {
 		return hotelRepository.findById(id).get();
 	}
 	
-	public String removeHotelById(int booking_id) {
-		if(hotelRepository.existsById(booking_id))
-		 {hotelRepository.deleteById(booking_id);
-		return "Bookingdetails are removed successfully";}
-		else {throw new HotelIdNotFoundException("Booking details are not found with Booking_Id:"+booking_id);}}
+	public String removeHotelById(int hotel_id) {
+		if (hotelRepository.existsById(hotel_id)) {
+			hotelRepository.deleteById(hotel_id);
+			return "Hotel was removed successfully";
+		} else {
+			throw new HotelIdNotFoundException("Hotel is not found with Hotel Id:" + hotel_id);
+		}
+	}
 }
